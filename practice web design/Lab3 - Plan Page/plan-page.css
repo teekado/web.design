@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(./images/plan-page.jpg);
+    background-size: cover;
+    font-family: Lato, sans-serif;
+    margin: 20px 80px;
+}
+section {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px;
+}
+article {
+    Background: #262626;
+    Border: 5px solid #424242;
+    Color: #a1a1a1;
+    text-align: center;
+    display: inline-block;
+    margin: 20px;
+    width: 300px;
+}
+article h1 {
+    font-size: 1.5em;
+    color: #fff;
+    padding: 25px 0;
+}
+article .price {
+    font-size: 3em;
+    font-weight: bold;
+    Color: #27dcc4;
+    padding: 50px 0;
+}
+article li {
+    List-style-type: none;
+    Padding: 5px 0;
+}
+article button {
+    Background: #27dcc4;
+    Color: #FFF;
+    Padding: 15px 30px;
+    Margin: 10px 0;
+    font-size: 0.9em;
+    Cursor: pointer;
+    Border: none;
+}
+article button:hover {
+    Background: #ACACAC;
+}

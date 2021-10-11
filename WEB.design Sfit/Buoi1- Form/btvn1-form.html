@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SFIT</title>
+</head>
+<body>
+<div class="html-form">
+    <div class="text-input">
+        <h1>Text Input</h1>
+        <form>
+			<label for="fname">First name:</label><br>
+			<input type="text" name="fname" id="fname"><br>
+			<label for="lname">Last name:</label><br>
+			<input type="text" name="lname" id="lname"><br>
+	    </form>
+        <p>Note that the form itself is not visible</p>
+        <p>Also note that the default width of a text input field is 20 characters</p>
+    </div>
+
+    <div class="textarea">
+        <h1>Textarea</h1>
+        <p>The textarea element defines a multi-line input field.</p>
+        <form>
+            <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+        </form>
+    </div>
+
+    <div class="password-field">
+        <h1>Password field</h1>
+        <p>The <b>input type="password" defines a password field:</b></p>
+        <form>
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" id="username" required><br>
+            <label for="password">User Password:</label><br>
+            <input type="password" name="password" id="password" required><br>
+        </form>
+        <p>The characters  in a password field are masked (shown as asterisks or circles)</p>
+    </div>
+
+    <div class="the-submit-reset-button">
+        <h1>The Submit-Reset Button</h1>
+        <form>
+                <label for="fname">First name:</label>
+                <input type="text" name="fname" id="fname" placeholder="Mickey"><br>
+                <br>
+                <label for="lname">Last name:</label>
+                <input type="text" name="lname" id="lname" placeholder="Mouse">
+                <br><br>
+                <input type="submit" value="Submit">
+                <input type="submit" value="Reset">
+        </form>
+        <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+        <p>If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.</p>
+    </div>
+
+    <div class="radio-checkbox">
+        <h1>The Radio Buttons And Checkbox Buttons</h1>
+        <p>Please select your gender:</p>
+        <form action="radio">
+            <input type="radio" name="radio" id="Male" value="Male">
+            <label for="CNTT1">Male</label><br>
+            <input type="radio" name="radio" id="Female" value="Female">
+            <label for="CNTT2">Female</label><br>
+        </form>
+
+        <p>Please select your gender:</p>
+        <form>
+            <input type="checkbox" name="checkbox" id="bike" value="bike">
+            <label for="CNTT1">Bike</label><br>
+            <input type="checkbox" name="checkbox" id="car" value="car">
+            <label for="CNTT2">Car</label><br>
+            <input type="checkbox" name="checkbox" id="boat" value="boat">
+            <label for="CNTT3">Boat</label><br><br>		
+        </form>
+        <input type="submit" value="Submit">
+    </div>
+
+    <div class="drop-down">
+        <h1>The Drop-down menu with option group</h1>
+        <form>
+            <select id="game" name="Game">
+                <option value=lol">Legua of Legend</option>
+                <option value="dota">Defend of the Ancients</option>
+                <option value="ff">Garena Free Fire</option>
+                <option value="fifa">Fifa Online</option>
+            </select>	
+        </form>
+    </div>
+
+    <div class="show-file-select">
+        <h1>Show a file-select field</h1>
+        <form>
+            <label for="myfile">Select a file:</label>
+            <input type="file" name="myfile" id="myfile"> <br><br>
+            <input type="submit" value="Submit a image">
+        </form>
+        <br>
+        <form>
+            <label for="myfile">Select mutiple files:</label>
+            <input type="file" name="myfile" id="myfile"> <br><br>
+            <input type="submit" value="Submit multiple images">
+        </form>
+    </div>
+
+    <div class="define-hidden-input-field">
+        <h1>Define a hidden input field</h1>
+        <form>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <input type="hidden" id="custId" name="custId" value="3487">
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+</div>
+</body>
+</html>
