@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+.nav li{
+    display: inline-block ;
+    padding: 10px;
+}
+.nav {
+
+}
+h1{
+    padding: 20px 10px;
+}
+.quick {
+    border: 1px solid rgb(235, 230, 230);
+    margin: 30px 10px;
+    list-style: none;
+}
+.quicklinkleft {
+    width: 25%;
+    float: left;
+}
+.quicklink{
+    border: 1px solid rgb(235, 230, 230);
+    background-color: rgb(235, 230, 230);
+    padding: 5px 15px;
+}
+.quick li a{
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+}
+.content {
+    display: inline-block;
+    float: right;
+    width: 70%;
+    margin: 20px;
+}
+h2 {
+    padding: 5px
+}
+.create {
+    border: 1px solid rgb(179, 173, 173);
+    margin: 25px 0;
+}
+form {
+    background-color: rgb(233, 231, 231);
+}
+form .fname {
+    padding: 10px 30px;
+}
+form .lname {
+    padding: 10px 30px;
+}
+form .birthday {
+    padding: 10px 30px;
+}
+form .gender {
+    padding: 10px 30px;
+}
+form .save {
+    margin: 10px 60px;
+    padding: 3px 5px
+}
+.table-name th {
+    border: 1px solid rgb(235, 230, 230); 
+    padding: 4px ;
+    background-color: rgb(235, 230, 230);
+}
+.table-name td {
+    border: 1px solid rgb(235, 230, 230); 
+    padding: 5px;
+}
+.footer {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
