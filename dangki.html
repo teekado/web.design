@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <style type="text/css">
+        body {
+    background-color: #ddd;
+}
+.formdangki {
+    display: flex;
+    justify-content: center;
+}
+.form {
+    display: flex;
+    justify-content: center;
+}
+.input {
+    flex-direction: column;
+}
+.heading {
+    color: #333;
+}
+#name, #email, #pass, #pass-after {
+    width: 400px;
+    padding: 7px;
+    margin: 10px 0;
+}
+#error-name, #error-email, #error-pass, #error-pass-after{
+    display: none;
+    color: tomato;
+    margin: 0;
+}
+#dangkicreate {
+    margin: 30px
+}
+
+    </style>
+
+</head>
+<body>
+<div class="formdangki">
+    <form>
+        <h1 class="heading">ĐĂNG KÍ</h1>
+        <input type="text" id="name" placeholder="Username" required > <br>
+        <p id="error-name">Tên không hợp lệ</p>
+        <input type="email" id="email" placeholder="Email" required > <br>
+        <p id="error-email">Email không hợp lệ</p>
+        <input type="password" id="pass" placeholder="Password" required > <br>
+        <p id="error-pass">Password không hợp lệ</p>
+        <input type="password" id="pass-after" placeholder="Nhập lại Password" required > <br>
+        <p id="error-pass-after">Password nhập lại không giống</p>
+        <input type="button"value="Tạo tài khoản"id="dangkicreate"onclick="validate()"/>
+    </form>
+</div>
+
+    <script type="text/javascript">
+        const email = document.getElementById('email');
+const pass = document.getElementById('pass');
+const name = document.getElementById('name');
+const passafter = document.getElementById('pass-after');
+const dangkicreate = document.getElementById('dangkicreate');
+const Login = document.getElementById('dangki-dangnhap');
+
+const emailform =/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const passform = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]{6,12}$/;
+const nameform = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]{10,100}$/;
+
+dangkicreate.addEventListener('click',add);
+
+Login.addEventListener('click',next);
+
+
+function checkName(){
+  if(!nameform.test(name.value)){
+    document.getElementById('error-name').style.display = 'block';
+    document.getElementById('name').style.border = '1px solid red';
+    return false;
+  }
+  else{
+    document.getElementById('name').style.border = '1px solid green';
+    document.getElementById('error-name').style.display = 'none';
+    return true;
+  }
+}
+function checkEmail(){
+  if(!emailform.test(email.value)){
+    document.getElementById('error-email').style.display = 'block';
+    document.getElementById('email').style.border = '1px solid red';
+    return false;
+  }
+  else{
+    document.getElementById('email').style.border = '1px solid green';
+    document.getElementById('error-email').style.display = 'none';
+    return true;
+  }
+    
+}
+function checkPass(){
+  if(!passform.test(pass.value)){
+    document.getElementById('error-pass').style.display = 'block';
+    document.getElementById('pass').style.border = '1px solid red';
+    return false;
+  }
+  else{
+    document.getElementById('error-pass').style.display = 'none';
+    document.getElementById('pass').style.border = '1px solid green';
+    return true;
+  } 
+}
+function checkPassAfter(){
+  if(passafter.value.length == 0 && pass.value.length == 0){
+    document.getElementById('pass-after').style.border = '1px solid red';
+    return false;
+  }
+  else{
+    if(!passform.test(passafter.value) && pass.value != passafter.value)
+    {
+    document.getElementById('error-pass-after').style.display = 'block';
+    document.getElementById('pass-after').style.border = '1px solid red';
+    return false;
+  }
+     if(passform.test(passafter.value) && pass.value == passafter.value){
+
+    document.getElementById('pass-after').style.border = '1px solid green';
+    return true;
+  }
+ }
+}
+function add(){
+  
+    checkName();
+    checkEmail();
+    checkPass();
+    checkPassAfter();
+
+    if(checkEmail() && checkName() && checkPass() && checkPassAfter()){
+      alert('Tạo khoản ' + name.value + ' thành công');
+      localStorage.setItem(email.value,pass.value);
+    }
+}
+
+    </script>
+</body>
+</html>
