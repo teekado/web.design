@@ -1,0 +1,135 @@
+a {
+	text-decoration: none;
+}
+
+body{
+	background-color: #F9F9F9;
+	margin: 0;
+}
+.wrap{
+	width: 90%;
+	margin: 0 auto;
+}
+
+/*begin left grid items*/
+.leftgrid{
+	width: 80%;
+	float: left;
+}
+.leftgrid ul{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.leftgrid li{
+	width: 24%;
+	float: left;
+	background-color: white;
+	box-sizing: border-box;
+	margin: .5%;
+	text-align: center;
+}
+.leftgrid img{
+	size: 100%;
+}
+/*end left grid items*/
+/*begin right side bar*/		
+.rightsider{
+	float:right;
+	width:20%;
+	font-family: 'Open Sans', sans-serif;
+}
+/*end right side bar*/
+
+/* Câu 2: Đỗ Tuấn Khôi 12.11.2002 */
+/*begin categories*/
+.heading-categories {
+    font-size: 16px;
+}
+.categories-list li {
+    list-style: none;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+}
+.categories-list li a {
+    color: #807878;
+}
+.categories-list li a:hover {
+    color: #94CB32;
+    font-size: 18px;
+}
+/*end catetories*/
+/*begin footer*/
+.footer{
+	clear: both;		
+	overflow: auto;
+	line-height: 50px;
+	color: #A6A6A6;
+	padding-left: 10px;
+	
+}
+.footer a{
+	color: #575757;
+	text-decoration: none;
+}
+.footer a:hover{
+	color: #94CB32;
+}
+
+/*end footer*/
+/*begin comment form*/
+#email{
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #E9E9E9;
+	border-style: ridge;
+}
+#submit{
+	width: 100px;
+	color: #000;			
+	padding: 5px 9px 5px 10px;
+	border: 1px solid #e5e5e5;
+	margin: 10px 0;
+	border-left:none;
+	cursor:pointer;
+	background:#94CB32;
+	font-weight: bold;
+}
+/*end conment form*/
+
+/* Câu 4: responsive  */ 
+/* giúp người dùng với nhiều thiết bị tốt hơn  */
+ /* == PC == */
+ @media (min-width: 1024px) {
+
+}
+  /* == TABLET == */
+@media (min-width: 740px) and (max-width: 1023px) {
+	.leftgrid li{
+		width: 45%;
+	}
+}
+
+  /* == MOBILE == */
+@media (max-width: 739px) {
+	.leftgrid li{
+		width: 100%;
+	}
+	.rightsider{
+		width: 100%;
+	}
+}
+
+/* câu 4: thẩm mỹ */
+.leftgrid li {
+	height: 320px;
+	box-shadow: 1px 1px 2px;
+}
+.leftgrid li:hover { /*  giúp đẹp hơn có điểm nhấn  */
+	cursor: pointer;
+	opacity: 0.8;
+}
+.leftgrid {
+	width: 75%;
+}
