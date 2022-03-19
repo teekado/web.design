@@ -165,6 +165,37 @@
         </div>
     </div>
 
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "148320349095795");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+   window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v13.0'
+    });
+  };
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
             <div class="modal-close js-modal-close">
@@ -196,71 +227,10 @@
                 <p class="modal-help">Need <a href="">help?</a></p>
             </footer>
         </div>
-        
     </div>
-    
-    <script>
-        const buyBtns = document.querySelectorAll('.js-buy-tickets')
-        const modal = document.querySelector('.js-modal')
-        const modalContainer = document.querySelector('.js-modal-container')
-        const modalClose = document.querySelector('.js-modal-close')
-    
-        // hàm hiển thị modal mua vé (thêm class open vào modal)
-        function showBuyTickets() {
-            modal.classList.add('open')
-        }
-        
-        //hàm ẩn modal mua vé (gỡ bỏ class open đã thêm vào modal)
-        function hideBuyTickets() {
-            modal.classList.remove('open')
-        }
+    <!--==== js ====-->
+    <script src="./assets/js/buy_tickes.js"></script>
+    <script src="./assets/js/menu_mobile.js"></script>
 
-        //lắng nghe hành động click vào buy button của người dùng
-        //for là hàm vòng lặp, áp dụng với nhiều btn trong tổ hợp
-        for (const buyBtn of buyBtns) {
-            buyBtn.addEventListener('click', showBuyTickets)
-        }
-
-        //nghe hành vi click vào btn close
-        modalClose.addEventListener('click', hideBuyTickets)
-        modal.addEventListener('click', hideBuyTickets)
-
-        //ngăn chặn hành vi nổi bọt
-        modalContainer.addEventListener('click', function (event) {
-            event.stopPropagation()
-        })
-    </script>
-
-    <script>
-        var header = document.getElementById('header');
-        var mobileMenu = document.getElementById('mobile-menu');
-        var headerHeight = header.clientHeight;
-    
-        // dóng mở mobile menu
-        mobileMenu.onclick = function() {
-            var isClosed = header.clientHeight === headerHeight;
-            if (isClosed) {
-                header.style.height = 'auto';
-            }
-            else {
-                header.style.height = null;
-            }
-        }
-
-        // tự động đong khi chọn menu 
-        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
-        for (var i=0; i < menuItems.length; i++ ) {
-            var menuItem = menuItems[i];
-
-            menuItem.onclick = function(event) {
-                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-                if (isParentMenu) {
-                    event.preventDefault();
-                } else {
-                    header.style.height = null;
-            }
-        }
-    }
-    </script>
 </body>
 </html>
